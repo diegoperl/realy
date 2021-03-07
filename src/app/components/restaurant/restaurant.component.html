@@ -1,0 +1,13 @@
+<div class="restaurant-container">
+    <h1 class="title">Reali Restaurant</h1>
+    <div class="actions">
+        <button class="actionBtn" (click)="newOrder()">Order</button>
+        <button class="actionBtn" (click)="showDailyreport()">Report</button>
+    </div>
+    
+    <!-- this can be better implemented with child routes but i had to take in acount the little time i had-->
+    <app-tables *ngIf="showTables" (editTable)="editTable($event)"></app-tables>
+    <app-order  *ngIf="showOrder" [currentOrder]="currentOrder"></app-order>
+    <app-report *ngIf="showReport"></app-report>
+    
+</div>

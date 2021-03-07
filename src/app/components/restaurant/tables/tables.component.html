@@ -1,0 +1,15 @@
+<div class="tables-container">
+    <h3 class="title">tables</h3>
+    <div class="tables-list">
+        <div *ngFor="let table of tables$ | async" (click)="openOrderForEdit(table.number)">
+            
+            <select [(ngModel)]= "table.status">
+               <option value="Active">Active</option>
+               <option value="Cancelled">Cancelled</option>
+               <option value="Paid">Paid</option>
+            </select>
+
+            <div> Table number : {{ table.number }}</div>
+        </div>
+    </div>  
+</div>
